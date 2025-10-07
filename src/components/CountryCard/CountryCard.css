@@ -19,3 +19,34 @@ article {
     width: 3rem;
     height: 2rem;
 }
+
+.country-name-default,
+.country-name-africa,
+.country-name-america,
+.country-name-asia,
+.country-name-europe,
+.country-name-oceania {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.country-name-africa {
+    color: rgb(20, 77, 201);
+}
+
+.country-name-america {
+    color: rgb(20, 181, 53);
+}
+
+.country-name-asia {
+    color: rgb(201, 20, 32);
+}
+
+.country-name-europe {
+    color: rgb(207, 182, 50);
+}
+
+.country-name-oceania {
+    color: rgb(145, 16, 204);
+}

@@ -12,7 +12,7 @@ function App() {
     useEffect(() => {
         async function fetchCountries() {
             try {
-                const result = await axios.get('https://restcountries.com/v3.1/all?fields=name,flags,population');
+                const result = await axios.get('https://restcountries.com/v3.1/all?fields=name,flags,population,region');
                 setCountries(result.data);
             } catch (error) {
                 console.log(error);
@@ -42,7 +42,8 @@ function App() {
                             <CountryCard key={index}
                                          flag={country.flags.png}
                                          name={country.name.common}
-                                         population={country.population}/>
+                                         population={country.population}
+                                         region={country.region}/>
                         ))}
                     </div>
                 )}

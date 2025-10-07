@@ -1,29 +1,24 @@
 function determineColorByRegion(region) {
-    const region = "";
 
-    switch (region.toLowerCase().trim()) {
+    switch (region.toLowerCase()) {
         case 'africa':
         case 'afrika':
-            //
-            break;
+            return "country-name-africa";
         case 'americas':
         case 'amerika':
         case 'america':
         case 'usa':
         case 'united states':
         case 'united states of america':
-            //
-            break;
+            return "country-name-america";
         case 'asia':
         case 'azie':
         case 'azië':
-            //
-            break;
+            return "country-name-asia";
         case 'europe':
         case 'europa':
         case 'eu':
-            //
-            break;
+            return "country-name-europe";
         case 'oceania':
         case 'oceanie':
         case 'oceanië':
@@ -33,10 +28,9 @@ function determineColorByRegion(region) {
         case 'nieuw-zeeland':
         case 'nieuw zeeland':
         case 'new zealand':
-            //
-            break;
+            return "country-name-oceania";
         default:
-        //
+            return "country-name-default";
     }
 }
 

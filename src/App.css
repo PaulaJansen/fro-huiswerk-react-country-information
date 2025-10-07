@@ -13,7 +13,7 @@ header {
 }
 
 .main-wrapper {
-    background-color: rgba(204, 201, 196, 0.6);
+    background-color: rgba(204, 201, 196, 0.4);
     padding: 5rem;
     min-height: 50vh;
     border:  1px solid rgb(78, 76, 74);
