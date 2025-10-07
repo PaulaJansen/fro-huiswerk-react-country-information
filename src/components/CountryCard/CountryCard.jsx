@@ -1,17 +1,14 @@
 import './CountryCard.css';
-import determineColorByRegion from "../../helpers/determineColorByRegion.js";
 
-function CountryCard({flag, name, population, region}) {
-
-    const regionClass = determineColorByRegion(region);
-
+function CountryCard({url, title, subRegion, capital, population, neighbors, domain}) {
     return (
-        <article>
-            <div className="header-wrapper">
-                <img className="flag-image" src={flag} alt={`flag of ${name}`}/>
-                <h3 className={regionClass} >{name}</h3>
-            </div>
-            <p className="population-info">Has a population of {population} people</p>
+        <article className="card-wrapper">
+            <img className="card-flag" src={url} alt="flag" />
+            <h2>{title}</h2>
+            <p className="card-line"></p>
+            <p>{`${title} is situated in ${subRegion} and the capital is ${capital}`}</p>
+            <p>{`The country has a population of ${population} people and it borders with ${neighbors} neighboring countries`}</p>
+            <p>{`Websites can be found on ${domain} domains`}</p>
         </article>
     )
 }

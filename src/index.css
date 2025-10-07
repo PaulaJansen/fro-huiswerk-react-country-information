@@ -15,6 +15,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1, h2 {
   font-family: 'Gochi Hand', cursive;
+}
+
+h3 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 200;
 }
