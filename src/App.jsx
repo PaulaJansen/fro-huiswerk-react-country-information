@@ -12,6 +12,7 @@ function App() {
     const [countries, setCountries] = useState([]);
     const [searchValue, setSearchValue] = useState("");
     const [searchedCountry, setSearchedCountry] = useState(null);
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         async function fetchCountries() {
@@ -26,12 +27,26 @@ function App() {
         fetchCountries();
     }, [])
 
+    useEffect(() => {
+        if (view === "menu") {
+            setErrorMessage("");
+        }
+    }, [view]);
+
     const sortedCountries = [...countries].sort((a, b) => a.population - b.population);
 
     const handleSearch = (e) => {
         e.preventDefault();
-        const result = countries.find((country) => country.name.common.toLowerCase() === searchValue.toLowerCase());
-        setSearchedCountry(result || null);
+        const result = countries.find((country) =>
+            country.name.common.toLowerCase() === searchValue.toLowerCase());
+        if (result) {
+            setSearchedCountry(result || null);
+            setErrorMessage("");
+        } else {
+            setSearchedCountry(null);
+            setErrorMessage("Country not found, try again!");
+        }
+        setSearchValue("");
     }
 
     return (
@@ -50,6 +65,7 @@ function App() {
                         </Button>
                     </div>
                 )}
+
                 {view === "allCountries" && (
                     <div>
                         <aside className="menu-navigation">
@@ -69,6 +85,7 @@ function App() {
                         </section>
                     </div>
                 )}
+
                 {view === "searchCountry" && (
                     <div>
                         <aside className="menu-navigation">
@@ -82,14 +99,19 @@ function App() {
                             <form className="searchbar-wrapper" onSubmit={handleSearch}>
                                 <input className="search-input"
                                        type="text"
-                                       placeholder="Bijvoorbeeld Netherlands of Peru"
+                                       placeholder="For example Netherlands or Peru"
                                        value={searchValue}
-                                       onChange={(e) => setSearchValue(e.target.value)}
+                                       onChange={(e) => {
+                                           setSearchValue(e.target.value);
+                                           setErrorMessage("")
+                                       }}
                                 />
                                 <Button type="submit" className="button-secondary">
                                     <h3>Search</h3>
                                 </Button>
                             </form>
+                            <p className="error-message">{errorMessage}</p>
+
                             {searchedCountry && (
                                 <CountryCard url={searchedCountry.flags.png}
                                              title={searchedCountry.name.common}

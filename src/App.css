@@ -68,5 +68,11 @@ header {
     padding: 0 0.5rem;
 }
 
+.error-message {
+    color: var(--color-asia);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
 
 
