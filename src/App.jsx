@@ -43,51 +43,65 @@ function App() {
                 {view === "menu" && (
                     <div className="main-button">
                         <Button type="button" className="button-primary" onClick={() => setView("allCountries")}>
-                            <h3>Zoek alle landen</h3>
+                            <h3>See all countries</h3>
                         </Button>
                         <Button type="button" className="button-primary" onClick={() => setView("searchCountry")}>
-                            <h3>Zoek een land</h3>
+                            <h3>Search one country</h3>
                         </Button>
                     </div>
                 )}
                 {view === "allCountries" && (
-                    <div className="main-countries">
-                        {sortedCountries.map((country, index) => (
-                            <CountryInfo key={index}
-                                         flag={country.flags.png}
-                                         name={country.name.common}
-                                         population={country.population}
-                                         region={country.region}
-                            />
-                        ))}
+                    <div>
+                        <aside className="menu-navigation">
+                            <Button type="button" className="button-primary" onClick={() => setView("menu")}>
+                                <h3>Back to menu</h3>
+                            </Button>
+                        </aside>
+                        <section className="main-countries">
+                            {sortedCountries.map((country, index) => (
+                                <CountryInfo key={index}
+                                             flag={country.flags.png}
+                                             name={country.name.common}
+                                             population={country.population}
+                                             region={country.region}
+                                />
+                            ))}
+                        </section>
                     </div>
                 )}
                 {view === "searchCountry" && (
-                    <section className="search">
-                        <h2>Search country information</h2>
-                        <img src={Globe} alt="Globe" className="search-icon"/>
-                        <form className="searchbar-wrapper" onSubmit={handleSearch}>
-                            <input className="search-input"
-                                   type="text"
-                                   placeholder="Bijvoorbeeld Netherlands of Peru"
-                                   value={searchValue}
-                                   onChange={(e) => setSearchValue(e.target.value)}
-                            />
-                            <Button type="submit" className="button-secondary">
-                                <h3>Zoek</h3>
+                    <div>
+                        <aside className="menu-navigation">
+                            <Button type="button" className="button-primary" onClick={() => setView("menu")}>
+                                <h3>Back to menu</h3>
                             </Button>
-                        </form>
-                        {searchedCountry && (
-                            <CountryCard url={searchedCountry.flags.png}
-                                         title={searchedCountry.name.common}
-                                         subRegion={searchedCountry.region}
-                                         capital={searchedCountry.capital}
-                                         population={searchedCountry.population}
-                                         domain={searchedCountry.tld?.[0]}
-                                         neighbors={searchedCountry.borders ? searchedCountry.borders.length : 0}
-                            />
-                        )}
-                    </section>
+                        </aside>
+                        <section className="search">
+                            <h2>Search country information</h2>
+                            <img src={Globe} alt="Globe" className="search-icon"/>
+                            <form className="searchbar-wrapper" onSubmit={handleSearch}>
+                                <input className="search-input"
+                                       type="text"
+                                       placeholder="Bijvoorbeeld Netherlands of Peru"
+                                       value={searchValue}
+                                       onChange={(e) => setSearchValue(e.target.value)}
+                                />
+                                <Button type="submit" className="button-secondary">
+                                    <h3>Search</h3>
+                                </Button>
+                            </form>
+                            {searchedCountry && (
+                                <CountryCard url={searchedCountry.flags.png}
+                                             title={searchedCountry.name.common}
+                                             subRegion={searchedCountry.region}
+                                             capital={searchedCountry.capital}
+                                             population={searchedCountry.population}
+                                             domain={searchedCountry.tld?.[0]}
+                                             neighbors={searchedCountry.borders ? searchedCountry.borders.length : 0}
+                                />
+                            )}
+                        </section>
+                    </div>
                 )}
             </main>
         </>

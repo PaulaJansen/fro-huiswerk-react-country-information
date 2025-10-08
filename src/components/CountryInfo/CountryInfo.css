@@ -30,21 +30,21 @@ article {
 }
 
 .country-name-africa {
-    color: rgb(20, 77, 201);
+    color: var(--color-africa);
 }
 
 .country-name-america {
-    color: rgb(20, 181, 53);
+    color: var(--color-america);
 }
 
 .country-name-asia {
-    color: rgb(201, 20, 32);
+    color: var(--color-asia);
 }
 
 .country-name-europe {
-    color: rgb(207, 182, 50);
+    color: var(--color-europe);
 }
 
 .country-name-oceania {
-    color: rgb(145, 16, 204);
+    color: var(--color-oceania);
 }

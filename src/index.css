@@ -6,6 +6,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: rgb(78, 76, 74);
+  --color-africa: rgb(20, 77, 201);
+  --color-africa-light: rgba(20, 77, 201, 0.2);
+  --color-america: rgb(20, 181, 53);
+  --color-america-light: rgba(20, 181, 53, 0.2);
+  --color-asia: rgb(201, 20, 32);
+  --color-asia-light: rgba(201, 20, 32, 0.2);
+  --color-europe: rgb(207, 182, 50);
+  --color-europe-light: rgba(207, 182, 50, 0.2);
+  --color-oceania-light: rgba(145, 16, 204, 0.2);
+}
+
 body {
   display: flex;
   flex-direction: column;

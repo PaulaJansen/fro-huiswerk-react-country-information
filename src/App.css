@@ -13,16 +13,23 @@ header {
 }
 
 .main-wrapper {
-    background-color: rgba(204, 201, 196, 0.4);
+    background-color: var(--color-africa-light);
     padding: 5rem;
     min-height: 50vh;
-    border:  1px solid rgb(78, 76, 74);
+    border:  1px solid var(--primary-color);
 }
 
 .main-button {
     display: flex;
     justify-content: center;
     gap: 2.5rem;
+}
+
+.menu-navigation {
+    width: 13rem;
+    position: relative;
+    left: -3rem;
+    top: -2rem;
 }
 
 .main-countries {
