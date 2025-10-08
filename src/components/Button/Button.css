@@ -1,0 +1,28 @@
+.button-primary,
+.button-secondary {
+    background-color: var(--color-africa);
+    border: 1px solid rgb(78, 76, 74);
+    padding: 0.9rem 3rem;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+}
+
+.button-secondary {
+    background-color: var(--color-america);
+    border: 3px solid var(--color-america);
+    position: relative;
+    left: -1rem;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.button-primary:hover {
+    background-color: var(--color-africa-light);
+    color: rgb(78, 76, 74);
+}
+
+.button-secondary:hover  {
+    background-color: var(--color-europe);
+    border: 2px solid var(--color-africa);
+    color: rgb(255, 255, 255);
+}

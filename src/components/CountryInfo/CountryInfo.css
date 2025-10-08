@@ -1,0 +1,50 @@
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 18rem;
+    gap: 0.5rem;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flag-image {
+    width: 3rem;
+    height: 2rem;
+}
+
+.country-name-default,
+.country-name-africa,
+.country-name-america,
+.country-name-asia,
+.country-name-europe,
+.country-name-oceania {
+    font-size: 1.5rem;
+}
+
+.country-name-africa {
+    color: var(--color-africa);
+}
+
+.country-name-america {
+    color: var(--color-america);
+}
+
+.country-name-asia {
+    color: var(--color-asia);
+}
+
+.country-name-europe {
+    color: var(--color-europe);
+}
+
+.country-name-oceania {
+    color: var(--color-oceania);
+}
